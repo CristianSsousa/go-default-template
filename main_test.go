@@ -7,7 +7,7 @@ import (
 )
 
 func TestHandler(t *testing.T) {
-	req, err := http.NewRequest("GET", "/", nil)
+	req, err := http.NewRequest("GET", "/", http.NoBody)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -30,7 +30,7 @@ func TestHandler(t *testing.T) {
 }
 
 func TestHealthHandler(t *testing.T) {
-	req, err := http.NewRequest("GET", "/health", nil)
+	req, err := http.NewRequest("GET", "/health", http.NoBody)
 	if err != nil {
 		t.Fatal(err)
 	}
